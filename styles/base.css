@@ -47,6 +47,81 @@ body {
 
 }
 
+footer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: snow;
+    padding: .25rem 0;
+    background-color: var(--detailsFonts);
+    text-shadow: black 1px 1px;
+    margin-top: 2rem;
+    font-weight: normal;
+    & > h3 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        gap: .5rem;
+        text-align: center;
+        & > a {
+            font-weight: bold;
+            position: relative;
+            transition: all 150ms ease-in-out;
+            z-index: 1;
+            overflow: hidden;
+            border-radius: 10px;
+            padding:0 .75rem;
+            text-align: center;
+            &::before {
+                content: "";
+                position: absolute;
+                bottom: -1px;
+                width: 100%;
+                left: 0;
+                height: 3px;
+                background-color: #fff;
+                box-shadow: black 0px 0px 3px;
+                border-radius: 10px;
+            }
+            &:hover::before {
+                transition: all 150ms ease-in-out;
+                background-color: black;
+            }
+            &::after {
+                position: absolute;
+                content: "";
+                background-color: #fff;
+                width: 0;
+                height: 0;
+                left: -50px;
+                top: 0;
+                z-index: -1;
+                transform: skew(-40deg);
+                padding: 0;
+                overflow: hidden;
+                border-radius: 10px;
+            }
+            &:hover::after {
+                border-radius: 10px;
+                width: 100%;
+                height: 100%;
+                padding: 2rem;
+                transition: all 150ms ease-in-out;
+            }
+            &:hover {
+                color: black;
+                text-shadow: none;
+                transition: all 150ms ease-in-out;
+            }
+        }
+    }
+}
+
 .show {
     display: flex;
 }

@@ -1,18 +1,4 @@
-#playLumber {
-    position: absolute;
-    z-index: 8;
-    bottom: 40px;
-    left: 20px;
-    color: snow;
-    font-size: 1.25rem;
-    text-transform: uppercase;
-    background-color: var(--detailsFonts);
-    padding: .5rem 1rem;
-    border-radius: 10px;
-    text-shadow: black 1px 1px;
-    font-weight: bold;
-    letter-spacing: 1px;
-}
+
 
 #lumberJack {
     width: 100%;
