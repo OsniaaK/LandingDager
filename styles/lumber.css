@@ -1,0 +1,85 @@
+#playLumber {
+    position: absolute;
+    z-index: 8;
+    bottom: 40px;
+    left: 20px;
+    color: snow;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    background-color: var(--detailsFonts);
+    padding: .5rem 1rem;
+    border-radius: 10px;
+    text-shadow: black 1px 1px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+#lumberJack {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    & > h1 {
+        color: var(--fontColorLight);
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+    }
+    & > iframe {
+        width: 600px;
+        height: 90%;
+        border: none;
+        z-index: 4;
+    }
+    & > span {
+        position: absolute;
+        z-index: 3;
+        left: 130px;
+        bottom: 0;
+        animation: float 1s 0s infinite ease-in-out alternate;
+        & > img {
+            width: 150px;
+            transform: rotate(0deg);
+        }
+    }
+    & > p {
+        position: absolute;
+        right: 7%;
+        color: var(--fontColorLight);
+    }
+}
+
+@keyframes float {
+    from {
+        transform: rotate(0deg) translateY(0);
+    }
+    to {
+        transform: rotate(0deg) translateY(-20px);
+    }
+}
+
+@media (max-width:1366px) {
+    #lumberJack {
+        & > p {
+            display: none;
+        }
+    }
+}
+
+@media (max-width:1280px) {
+    #lumberJack {
+        & > span {
+            display: none;
+        }
+    }
+}
+
+@media (max-width:630px) {
+    #lumberJack {
+        & > iframe {
+            width: 95%;
+        }
+    }
+}
