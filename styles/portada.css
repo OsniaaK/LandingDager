@@ -1,0 +1,279 @@
+main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  justify-content: space-between;
+  cursor: default;
+  background-image: url(../assets/heroIMG.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  & > a {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+    bottom: 30px;
+    left: 0;
+    right: 0;
+    width: 55px;
+    height: 55px;
+    cursor: pointer;
+    margin: auto;
+    transform: translateY(10px);
+    animation: float 2s 0s infinite ease-in-out alternate-reverse;
+    & > svg {
+      width: 100%;
+      height: 100%;
+      stroke: white;
+    }
+  }
+  & > article {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    padding: 0 4rem;
+    justify-content: center;
+    align-items: center;
+    width: 45%;
+    height: 100%;
+    gap: 2rem;
+    color: var(--fontColorLight);
+    text-align: center;
+    z-index: 3;
+    & > aside {
+      z-index: 5;
+      & > nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+        & > a {
+          width: 35px;
+          height: 35px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          opacity: 0;
+          animation: opacity 1s .5s ease-in-out forwards;
+          & > svg {
+            width: 100%;
+            height: 100%;
+            fill: white;
+            transition: all 100ms ease-in-out;
+            &:hover {
+              transform: scale(1.1);
+              transition: all 100ms ease-in-out;
+            }
+          }
+        }
+      }
+    }
+    & > picture {
+      width: 125px;
+      height: 125px;
+      border-radius: 50%;
+      overflow: hidden;
+      box-shadow: rgba(0, 0, 0, 0.473) 0px 0px 9px 4px;
+      z-index: 5;
+      transform: translateY(-140vh);
+      animation: appearFromTop 600ms .75s ease-in-out forwards;
+      & > img {
+        width: 100%;
+        object-fit: cover;
+        aspect-ratio: 1/1;
+      }
+    }
+    & > h1 {
+      z-index: 5;
+      font-size: 2rem;
+      text-shadow: black 2px 2px;
+      transform: translateX(-200vh);
+      animation: appearFromLeft 600ms .2s ease-in-out forwards;
+      & > span {
+        text-shadow: none;
+        text-transform: uppercase;
+        color: transparent;
+        background: linear-gradient(to bottom right, orange, orangered);
+        background-clip: text;
+        position: relative;
+      }
+    }
+    & > p {
+      text-shadow: black 2px 2px;
+      z-index: 5;
+      word-spacing: 2px;
+      font-size: 1.25rem;
+      text-align: left;
+      text-align: center;
+      transform: translateX(-200vh);
+      animation: appearFromLeft 600ms .3s ease-in-out forwards;
+    }
+    & > a {
+      z-index: 5;
+      background-color: var(--detailsFonts);
+      font-weight: bold;
+      padding: 0.75rem 1.5rem;
+      width: 240px;
+      text-align: right;
+      border-radius: 10px;
+      transition: all 100ms ease-in-out;
+      position: relative;
+      transform: translateX(-75vh);
+      animation: appearFromLeft 600ms .4s ease-in-out forwards;
+      & > span {
+        text-shadow: var(--fontColorDark) 2px 1px;
+        font-size: 1.5rem;
+        color: var(--fontColorLight);
+        letter-spacing: 1px;
+      }
+      &:hover {
+        transition: all 100ms ease-in-out;
+        transform: scale(1.03);
+        background-color: var(--BGCButtons);
+      }
+      & > svg {
+        width: 2.5rem;
+        transform: translateX(-10px);
+        position: absolute;
+        display: flex;
+        margin: auto;
+        top: 0;
+        bottom: 0;
+        transition: all 0.5s ease;
+      }
+      &:hover svg {
+        transform: translateX(5px);
+      }
+    }
+    &::before {
+      width: 100%;
+      padding: 5rem;
+      height: 100%;
+      position: absolute;
+      padding-left: 70rem;
+      background-color: rgba(26, 26, 26, 0.644);
+      box-shadow: rgba(26, 26, 26, 0.644) 0px 0px 10px 25px;
+      top: 0px;
+      z-index: 0;
+      right: 0px;
+      transform: skew(-30deg) translateY(140vh);
+      content: "";
+      animation: appearFromBottom2 1s 0s forwards;
+    }
+  }
+}
+
+@keyframes float {
+  from {
+    transform: translateY(-10px);
+  }
+  to {
+    transform: translateY(10px);
+  }
+}
+
+@keyframes appearFromTop {
+  0% {
+    transform: translateY(-140vh); 
+  }
+  70% {
+    transform: translateY(20px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+@keyframes appearFromLeft {
+  from {
+    transform: translateX(-140vw);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes opacity {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes appearFromBottom2 {
+  from {
+    transform: skew(-30deg) translateY(140vh);
+  }
+  to {
+    transform: skew(-30deg) translatex(0);
+  }
+}
+
+@media (max-width: 900px) {
+  main {
+    background-image: url(../assets/logoDager.png);
+    & > article {
+      top: auto;
+      left: auto;
+      width: 100%;
+      margin: auto;
+      & > picture {
+        display: none;
+      }
+      & > h1 {
+        font-size: 2.75rem;
+      }
+      & > p {
+        font-size: 1.5rem;
+      }
+      & > a {
+        width: 230px;
+        padding: 0.75rem 1.5rem;
+        & > span {
+          font-size: 1.4rem;
+        }
+        & > svg {
+          width: 30px;
+          height: 30px;
+        }
+        &:hover svg {
+          transform: translateX(0);
+        }
+      }
+      &::before {
+        transform: translateY(130vh) skew(0);
+        padding: 0;
+        width: 100%;
+        height: 100%;
+      }
+      & > aside {
+        & > nav {
+          gap: 2.5rem;
+          & > a {
+            width: 45px;
+            height: 45px;
+          }
+        }
+      }
+    }
+  }
+  @keyframes appearFromBottom2 {
+    from {
+      transform: translateY(130vh);
+    }
+    to {
+      transform: translatex(0);
+    }
+  }
+}

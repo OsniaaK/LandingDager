@@ -1,0 +1,220 @@
+#portfolioSection {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    padding: 3rem 0;
+    overflow: hidden;
+    background: linear-gradient(
+    135deg,
+    #121212 25%,
+    #1a1a1a 25%,
+    #1a1a1a 50%,
+    #121212 50%,
+    #121212 75%,
+    #1a1a1a 75%,
+    #1a1a1a
+  );
+  background-size: 40px 40px;
+  animation: move 4s linear infinite;
+    & > h1 {
+        color: var(--fontColorLight);
+        font-weight: bold;
+        writing-mode: vertical-rl;
+        text-orientation: upright;
+        font-size: 3rem;
+        transition: 150ms ease-in-out;
+        background: white;
+        background-clip: text;
+        margin-left: 150px;
+        &:hover {
+            color: transparent;
+            background: linear-gradient(to bottom right, var(--detailsFonts), orangered);
+            background-clip: text;
+            transition: 150ms ease-in-out;
+            letter-spacing: 4px;
+        }
+    }
+    & > ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2.5rem;
+        width: 80%;
+        & > li {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 80%;
+            height: 50%;
+            transition: all 0.5s ease-in-out;
+            & > a {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                height: 140px;
+                gap: 1.25rem;
+                background-color: rgba(29, 29, 29, 0.411);
+                border-radius: 20px;
+                padding: 3rem 1rem;
+                transition: 0.5s ease-in-out all;
+                & > img {
+                    width: 100px;
+                    height: 100px;
+                    aspect-ratio: 1/1;
+                    object-fit: cover;
+                    border-radius: 10px;
+                    transition: all 0.5s ease-in-out;
+                }
+                & > article {
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                    justify-content: center;
+                    align-items: flex-start;
+                    color: var(--fontColorLight);
+                    gap: 1rem;
+                    & > h1 {
+                        font-size: 1.25rem;
+                        text-transform: uppercase;
+                        position: relative;
+                        transition: all 0.5s ease-in-out;
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            bottom: -2px;
+                            border-radius: 10px;
+                            width: 100%;
+                            height: 4px;
+                            background-color: var(--detailsFonts);
+                        }
+                    }
+                    & > p {
+                        font-size: 1.1rem;
+                        text-shadow: black 1px 1px;
+                    }
+                    & > span {
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: center;
+                        width: 100%;
+                        gap: 1.25rem;
+                        transform: scale(0);
+                        opacity: 0;
+                        transition: all .5s ease-in-out;
+                        & >svg {
+                            width: 20px;
+                            height: 20px;
+                            stroke: white;
+                            fill: white;
+                        }
+                    }
+                }
+                &:hover {
+                    transform: scale(1.1);
+                    transition: all 100ms ease-in-out;
+                }
+            }
+            &:hover > a > article > span {
+                transform: scale(1);
+                opacity: 1;
+                transition: .5s ease-in-out all;
+            }
+            &:hover > a{
+                height: 240px;
+            }
+            &:hover > a > img {
+                height: 100%;
+                aspect-ratio: 1/1;
+                width: 25%;
+                object-fit: cover;
+                transition: all 0.5s ease-in-out;
+            }
+            &:hover > a > article > h1 {
+                font-size: 1.5rem;
+                transition: all 0.5s ease-in-out;
+                margin-left: 3rem;
+            }
+            &:hover > a > article > p {
+                font-size: 1.25rem;
+                transition: all 0.5s ease-in-out;
+            }
+        }
+    }
+}
+
+@media (max-width:1024px) {
+    #portfolioSection {
+        flex-direction: column;
+        gap: 2rem;
+        & > h1 {
+            writing-mode: horizontal-tb;
+            text-orientation: sideways;
+            margin-left: 0;
+        }
+        & > ul {
+            gap: 2rem;
+            & > li {
+                width: 90%;
+                padding-left: 0;
+                & > a {
+                    & > article {
+                        & >h1 {
+                            font-size: 1.05rem;
+                        }
+                        & > p {
+                            font-size: .85rem;
+                        }
+                    }
+                }
+                &:hover > a > article > h1 {
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:370px) {
+    #portfolioSection {
+        & > ul {
+            & > li {
+                & > a {
+                    & > img {
+                        width: 60px;
+                        height: 60px;
+                    }
+                    &> article {
+                        & > h1 {
+                            font-size: .85rem;
+                        }
+                        & > p {
+                            font-size: .55rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width:335px) {
+    #portfolioSection {
+        & > ul {
+            & > li {
+                & > a {
+                    & > article {
+                        & > h1 {
+                            &::before {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
